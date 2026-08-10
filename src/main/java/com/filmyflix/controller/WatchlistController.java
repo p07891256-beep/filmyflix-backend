@@ -31,16 +31,16 @@ public class WatchlistController {
         return watchlistRepository.findByProfileId(profileId);
     }
 
-    @PostMapping
-    public Watchlist addToWatchlist(@RequestParam Long profileId, @RequestParam Long movieId) {
-        Profile profile = profileRepository.findById(profileId).orElseThrow();
-        Movie movie = movieRepository.findById(movieId).orElseThrow();
+   @PostMapping
+public Watchlist addToWatchlist(@RequestParam Long profileId, @RequestParam Long movieId) {
+    Profile profile = profileRepository.findById(profileId).orElseThrow();
+    Movie movie = movieRepository.findById(movieId).orElseThrow();
 
-        Watchlist entry = new Watchlist();
-        entry.setProfile(profile);
-        entry.setMovie(movie);
-        return watchlistRepository.save(entry);
-    }
+    Watchlist entry = new Watchlist();
+    entry.setProfile(profile);
+    entry.setMovie(movie);
+    return watchlistRepository.save(entry);
+}
 
     @DeleteMapping("/{movieId}")
     public void removeFromWatchlist(@PathVariable Long movieId, @RequestParam Long profileId) {
