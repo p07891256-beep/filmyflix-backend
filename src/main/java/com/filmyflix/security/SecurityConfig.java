@@ -61,7 +61,11 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-      configuration.setAllowedOrigins(List.of("http://localhost:3000", "https://filmyflix-frontend.onrender.com", "https://filmyflix-frontend-production.up.railway.app"));  
+      configuration.setAllowedOrigins(List.of(
+    "http://localhost:3000",
+    "https://filmyflix-frontend.onrender.com",
+    "https://flimyflix-frontend-production-94f2.up.railway.app"
+)); 
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);

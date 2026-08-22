@@ -42,7 +42,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
 
         String token = jwtUtil.generateToken(user.getEmail());
 
-response.sendRedirect("https://filmyflix-frontend.onrender.com/oauth-success?token=" + token
+response.sendRedirect("https://flimyflix-frontend-production-94f2.up.railway.app/oauth-success?token=" + token
         + "&name=" + user.getName() + "&email=" + user.getEmail());
     }
 }
